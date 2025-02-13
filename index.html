@@ -1,0 +1,484 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+        integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+
+</head>
+
+<body>
+    <style>
+        ::-webkit-scrollbar {
+            width: 10px;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: #fa2851;
+            width: 0;
+            height: 25%;
+            transition: .5s ease;
+        }
+
+        :-webkit-scrollbar {
+            width: 12px;
+            background: rgb(255, 255, 255);
+            border-left: 0 solid white;
+            border-right: 0 solid white;
+        }
+
+        .social-icons {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .social-icons a {
+            display: block;
+            text-decoration: none;
+            transition: transform 0.3s ease-in-out;
+            position: relative;
+        }
+
+        .social-icons a:hover {
+            transform: scale(1.2);
+        }
+
+        /* Xüsusi dairəvi göstərici */
+        .cursor {
+            width: 30px;
+            height: 30px;
+            background: transparent;
+            border-radius: 50%;
+            position: absolute;
+            transform: translate(-50%, -50%);
+            pointer-events: none;
+            transition: 0.2s ease;
+            border: 2px solid #000;
+        }
+
+        .social-icons a:hover~.cursor {
+            width: 40px;
+            height: 40px;
+            background: rgba(223, 223, 223, 0.2);
+            border: 1px solid #d9d9d9;
+        }
+
+        nav ul li:hover~.cursor {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            background: rgba(199, 55, 55, 0.889);
+        }
+
+
+        /* Bar animasiya*/
+        .bars {
+            width: 24px;
+            height: 36px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .bars span {
+            width: 100%;
+            height: 2px;
+            background-color: #ffffff;
+            transition: 0.4s ease-in;
+            margin-bottom: 3px;
+        }
+
+        .bars:hover .tb {
+            width: 50%;
+        }
+    </style>
+    <header>
+        <div class="icon"><img src="./image/logo.png" alt=""></div>
+        <div class="menu">
+            <nav>
+                <ul>
+                    <li><a href="#">HOME</a></li>
+                    <li><a href="#about">ABOUT</a></li>
+                    <li><a href="#work">WORK</a></li>
+                    <li><a href="#pricing">PRICING</a></li>
+                    <li><a href="#contact">CONTACT</a></li>
+                </ul>
+            </nav>
+            <div class="bars" id="showBtn"><span class="tb"></span><span></span><span class="tb"></span></div>
+        </div>
+    </header>
+    <div class="top-menu">
+        <div class="icon"><img src="./image/logo-white.png" alt=""></div>
+        <div class="menu">
+            <nav>
+                <ul>
+                    <li><a href="">HOME</a></li>
+                    <li><a href="">ABOUT</a></li>
+                    <li><a href="">WORK</a></li>
+                    <li><a href="">PRICING</a></li>
+                    <li><a href="">CONTACT</a></li>
+                </ul>
+            </nav>
+            <div class="bars" id="show"><span class="tb"></span><span></span><span class="tb"></span></div>
+        </div>
+    </div>
+    <section class="home">
+        <div class="connect">
+            <div class="social-icons">
+                <a><i class="fa-brands fa-x-twitter"></i></a>
+                <a><i class="fa-brands fa-linkedin-in"></i></a>
+                <a><i class="fa-brands fa-instagram"></i></a>
+                <a><i class="fa-brands fa-google-plus-g"></i></a>
+                <div class="cursor"></div>
+            </div>
+        </div>
+        <div class="digital-info">
+            <div class="digital" data-aos="fade-up-right">
+                <h1>DIGITAL & SEO
+                    AGENCY</h1>
+                <p>Lorem ipsum is simply dummy text of the printing and typesetting. Lorem Ipsum has been the industry’s
+                    standard dummy. Lorem Ipsum has been the industry’s standard dummy</p>
+                <button class="pink-btn">Learn MORE</button>
+            </div>
+            <div class="foto" data-aos="fade-up-left"><img src="./image/slider-img.png" alt="">
+                <div class="kub"></div>
+            </div>
+        </div>
+    </section>
+    <section class="sidemenu bt-anima">
+        <div class="bg-overlay">
+            <div class="btn-close" id="closeBtn"><i class="fa-solid fa-xmark"></i></div>
+            <div class="wrapper">
+                <div class="container">
+                    <div><img src="./image/logo-white.png" alt=""></div>
+                    <div class="side-nav">
+                        <ul class="navbar">
+                            <li> <a href="">HOME</a></li>
+                            <li> <a href="">ABOUT</a></li>
+                            <li> <a href="">WORK</a></li>
+                            <li> <a href="">PRECING</a></li>
+                            <li> <a href="">CONTACT</a></li>
+                        </ul>
+                        <div class="side-footer">
+                            <div class="menu-company-details">
+                                <span>+1 631 123 4567</span>
+                                <span>email@website.com</span>
+                            </div>
+                            <ul class="social-icons-simple">
+                                <li><i class="fa-brands fa-x-twitter"></i></li>
+                                <li><i class="fa-brands fa-linkedin-in"></i></li>
+                                <li><i class="fa-brands fa-instagram"></i></li>
+                                <li><i class="fa-brands fa-google-plus-g"></i></li>
+                            </ul>
+                            <p>© 2024 MegaOne. Made With Love by Themesindustry</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="about" class="about">
+        <div class="dijital-about">
+            <p>Lorem ipsum is simply dummy text</p>
+            <h1>DIGITAL MARKETING
+                & <span style="color: #fa2851;">SEO EXPERTS</span></h1>
+            <div class="about-info">Lorem ipsum is simply dummy text of the printing and typesetting. Lorem Ipsum has
+                been the industry’s standard dummy. Lorem Ipsum has been the industry’s standard dummy.</div>
+        </div>
+        <div class="time-loading">
+            <ul>
+                <li>
+                    <div class="round">
+                        <img src="./image/endir.png" alt="">
+                        <p>257%</p>
+                    </div>
+                    <div class="year">Increase in Sales year on year</div>
+                </li>
+                <li>
+                    <div class="round"><img src="./image/endir.png" alt="">
+                        <p>96%</p>
+                    </div>
+                    <div class="year">Recommendation rate over the year</div>
+                </li>
+                <li>
+                    <div class="round"><img src="./image/endir.png" alt="">
+                        <p>317%</p>
+                    </div>
+                    <div class="year">New ventures we became part of</div>
+                </li>
+            </ul>
+        </div>
+    </section>
+    <section id="work" class="work">
+        <div class="work-info">
+            <h1 data-aos="fade-right">OUR RECENT WORK
+                & <span style="color: #fa2851;">PROJECTS</span></h1>
+            <p data-aos="fade-left">Lorem ipsum is simply dummy text of the printing and typesetting. Lorem Ipsum has
+                been the industry’s
+                standard dummy. Lorem Ipsum has been the industry’s standard dummy.</p>
+        </div>
+        <div class="box">
+            <div class="swiper mySwiper">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                        <div class="slider">
+                            <img src="./image/p1.jpg" alt="">
+                            <div class="slider-name">
+                                <span>
+                                    <h5>Coco Tans</h5>
+                                    <p>Client</p>
+                                </span>
+                                <span>
+                                    <h5>Coco Tans</h5>
+                                    <p>Client</p>
+                                </span>
+                                <span>
+                                    <h5>Coco Tans</h5>
+                                    <p>Client</p>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="slider">
+                            <img src="./image/p2.jpg" alt="">
+                            <div class="slider-name">
+                                <span>
+                                    <h5>Coco Tans</h5>
+                                    <p>Client</p>
+                                </span>
+                                <span>
+                                    <h5>Coco Tans</h5>
+                                    <p>Client</p>
+                                </span>
+                                <span>
+                                    <h5>Coco Tans</h5>
+                                    <p>Client</p>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="slider">
+                            <img src="./image/p3.jpg" alt="">
+                            <div class="slider-name">
+                                <span>
+                                    <h5>Coco Tans</h5>
+                                    <p>Client</p>
+                                </span>
+                                <span>
+                                    <h5>Coco Tans</h5>
+                                    <p>Client</p>
+                                </span>
+                                <span>
+                                    <h5>Coco Tans</h5>
+                                    <p>Client</p>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="slider">
+                            <img src="./image/p3.jpg" alt="">
+                            <div class="slider-name">
+                                <span>
+                                    <h5>Coco Tans</h5>
+                                    <p>Client</p>
+                                </span>
+                                <span>
+                                    <h5>Coco Tans</h5>
+                                    <p>Client</p>
+                                </span>
+                                <span>
+                                    <h5>Coco Tans</h5>
+                                    <p>Client</p>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        </div>
+    </section>
+    <section class="pricing">
+        <div class="choose-plan" id="pricing">
+            <div class="dijital-about">
+                <p>Lorem ipsum is simply dummy text</p>
+                <h1>CHOOSE YOUR <span style="color: #fa2851;">PLAN</span>
+                </h1>
+                <div class="about-info">Lorem ipsum is simply dummy text of the printing and typesetting. Lorem Ipsum
+                    has
+                    been the industry’s standard dummy. Lorem Ipsum has been the industry’s standard dummy.</div>
+            </div>
+        </div>
+        <div class="price">
+            <ul>
+                <li>
+                    <div class="price-num">
+                        <h3>4.99$</h3>
+                        <p>Monthly Billing</p>
+                        <div class="price-top-overlay"></div>
+                    </div>
+                    <div class="price-info">
+                        <div class="price-bottom-overlay"></div>
+                        <p>Full access Unlimited Bandwidth Email Accounts 4 Free Forks Every Months</p>
+
+                    </div>
+                </li>
+                <li>
+                    <div class="price-num">
+                        <h3>4.99$</h3>
+                        <p>Monthly Billing</p>
+                        <div class="price-top-overlay"></div>
+                    </div>
+                    <div class="price-info">
+                        <div class="price-bottom-overlay"></div>
+                        <p>Full access Unlimited Bandwidth Email Accounts 4 Free Forks Every Months</p>
+
+                    </div>
+                </li>
+                <li>
+                    <div class="price-num">
+                        <h3>4.99$</h3>
+                        <p>Monthly Billing</p>
+                        <div class="price-top-overlay"></div>
+                    </div>
+                    <div class="price-info">
+                        <div class="price-bottom-overlay"></div>
+                        <p>Full access Unlimited Bandwidth Email Accounts 4 Free Forks Every Months</p>
+
+                    </div>
+                </li>
+                <li>
+                    <div class="price-num">
+                        <h3>4.99$</h3>
+                        <p>Monthly Billing</p>
+                        <div class="price-top-overlay"></div>
+                    </div>
+                    <div class="price-info">
+                        <div class="price-bottom-overlay"></div>
+                        <p>Full access Unlimited Bandwidth Email Accounts 4 Free Forks Every Months</p>
+
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </section>
+    <section class="customers">
+        <div class="customer-comments">
+            <div class="customer-about" data-aos="fade-right">
+                <div class="customer-header">
+                    <h1>SATISFIED
+                        <span style="color: #fa2851;">CUSTOMERS</span>
+                    </h1>
+                </div>
+                <div class="customer-info"> Lorem ipsum is simply dummy text of the printing and typesetting. Lorem
+                    Ipsum
+                    has
+                    been the industry’s standard dummy.</div>
+            </div>
+            <div class="customers-slider" data-aos="fade-left">
+                <div class="icon-img"><img src="./image/quote.png" alt=""></div>
+                <p>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce vitae egestas mi, vel dapibus diam.
+                    Mauris malesuada, nisl non rutrum commodo, sem magna laoreet tellus, eu euismod dolor enim et mi. In
+                    at tempor purus.
+                </p>
+                <img class="customer-profile" src="./image/test2.jpg" alt="">
+            </div>
+        </div>
+        <div>
+            <div class="slider"></div>
+        </div>
+    </section>
+    <section class="blog">
+        <div class="blog-main">
+            <img data-aos="fade-right" src="./image/Başlıqsız_dizayn__12_-removebg-preview.png" alt="">
+            <div data-aos="fade-left" class="blog-info">
+                <h1>SEO NEWS & BLOGS</h1>
+                <p>Lorem ipsum is simply dummy text of the printing and typesetting. Lorem Ipsum has been the industry
+                </p>
+                <button class="pink-btn">Learn MORE</button>
+            </div>
+        </div>
+    </section>
+    <section class="contact" id="contact">
+        <div class="contact-info">
+            <div class="form" data-aos="fade-right">
+                <h1>GET IN TOUCH</h1>
+                <div class="form-input">
+                    <div class="info">
+                        <input type="text" placeholder="Your name">
+                        <input type="text" placeholder="Email Address *">
+                        <input type="text" placeholder="Subject">
+                    </div>
+                    <div class="message"><textarea name="" id="" placeholder="Your Message"></textarea></div>
+                </div>
+                <button class="send-btn">send message</button>
+            </div>
+            <div class="location" data-aos="fade-left">
+                <h1>OUR LOCATION</h1>
+                <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered .
+                </p>
+                <ul>
+                    <li><i class="fa-solid fa-location-dot"></i> 123 Park Avenue, New York, United States</li>
+                    <li><i class="fa-solid fa-phone-volume"></i> +1 631 1234 5678 +1 631 1234 5678</li>
+                    <li><i class="fa-regular fa-paper-plane"></i> email@website.com</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="./slider.js"></script>
+    <script>
+        AOS.init();
+        document.addEventListener("mousemove", function (e) {
+            let cursor = document.querySelector(".cursor");
+            cursor.style.left = e.clientX + "px";
+            cursor.style.top = e.clientY + "px";
+        });
+
+        document.querySelectorAll(".social-icons a").forEach((icon) => {
+            icon.addEventListener("mouseenter", () => {
+                document.querySelector(".cursor").classList.add("hover");
+            });
+            icon.addEventListener("mouseleave", () => {
+                document.querySelector(".cursor").classList.remove("hover");
+            });
+        });
+
+
+
+        let lastScrollTop = 80;
+        const men = document.querySelector(".top-menu");
+
+        window.addEventListener("scroll", () => {
+            let currentScroll = window.scrollY;
+
+            if (currentScroll > lastScrollTop) {
+                // Yuxarı scroll edəndə menyunu göstər
+                men.classList.add("show");
+            } else if (currentScroll < 80) {
+                // Aşağı scroll edəndə menyunu gizlət
+                men.classList.remove("show");
+            }
+
+            lastScrollTop = currentScroll;
+        });
+
+    </script>
+
+</body>
+
+</html>
